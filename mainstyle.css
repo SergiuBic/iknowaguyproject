@@ -10,33 +10,49 @@
 li, a{
 	text-decoration: none;
 }
-
-@keyframes imgland{
-	0%{
-	transform: scale(0.9);
-	}
-    50%{
-     transform: scale(1.5)
-     filter: blur(0.5px);
-    }
-	100%{
-	transform: scale(1);
-	filter: blur(1.5px);
-	}
+@-webkit-keyframes bgcycle {
+    0%{background-position:23% 0%}
+    50%{background-position:78% 100%}
+    100%{background-position:23% 0%}
+}
+@-moz-keyframes bgcycle {
+    0%{background-position:23% 0%}
+    50%{background-position:78% 100%}
+    100%{background-position:23% 0%}
+}
+@keyframes bgcycle { 
+    0%{background-position:23% 0%}
+    50%{background-position:78% 100%}
+    100%{background-position:23% 0%}
 }
 
-
 #bg {
+
   position: fixed; 
+  background:rgba(44, 58, 71,0.7);
   top: -50%; 
   left: -50%; 
   width: 200%; 
   height: 200%;
-  animation: imgland 30s ease-in-out infinite;
-  transition: .2s;
   z-index:-1;
+
+ /* background: -webkit-linear-gradient(to left, #C06C84, #6C5B7B, #355C7D);  
+  background: linear-gradient(to left, #C06C84, #6C5B7B, #355C7D);
+  background-size: 600% 600%;
+  -webkit-animation: bgcycle 60s ease infinite;
+  -moz-animation: bgcycle 60s ease infinite;
+  animation: bgcycle 60s ease infinite;
+  filter: grayscale(30%) blur(2px);
+  -moz-box-shadow: 0 0 5px #fff;
+-webkit-box-shadow: 0 0 5px #fff;
+box-shadow: 0px 0px 5px #fff;*/
+
+
+
 }
-#bg img {
+
+
+#bg .main-bg-image{
   position: absolute; 
   top: 0; 
   left: 0; 
@@ -45,8 +61,7 @@ li, a{
   margin: auto; 
   min-width: 50%;
   min-height: 50%;
-  filter: grayscale(80%) blur(3px);
-  
+
 }
 
 .main-grid{

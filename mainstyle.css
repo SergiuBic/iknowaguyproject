@@ -24,6 +24,8 @@ li, a{
 	filter: blur(1.5px);
 	}
 }
+
+
 #bg {
   position: fixed; 
   top: -50%; 
@@ -114,6 +116,7 @@ header{
 .nav-content li{
 	display: inline-block;
 	padding: 5px 5px;
+	position: relative;
 }
 .nav-content li a{
 	color: #2d3436;
@@ -126,6 +129,43 @@ header{
 	background: rgba(255, 234, 167,.9);
 	border-radius:3px;
 	text-transform: uppercase;
+	transition: .3s;
+}
+
+.nav-content li:nth-of-type(2):hover{
+	background: #2d3436;
+	font-weight:bold;
+	border:1px solid rgb(255, 195, 18);
+	border-radius:3px;
+	text-transform: uppercase;
+}
+.nav-content li:nth-of-type(1)::before, .nav-content li:nth-of-type(1)::after {
+	content:"";
+	position: absolute;
+	top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    transform-origin: center;
+ 
+}
+.nav-content li:nth-of-type(1)::before {
+    border-top: 2px solid rgba(255, 234, 167,.9);
+    transform: scale3d(0,1,1);
+}
+.nav-content li:nth-of-type(1)::after {
+    border-bottom: 2px solid rgba(255, 234, 167,.9);
+    transform: scale3d(1,0,1);
+ }
+.nav-content li:nth-of-type(1):hover::before,
+.nav-content li:nth-of-type(1):hover::after {
+    transform: scale3d(1,1,1);
+    background:rgb(255, 255, 255,.1);
+    transition: transform 0.2s;
+  }
+
+.nav-content li:nth-of-type(2):hover > a{
+	color: rgba(255, 234, 167,.9);
 }
 
 .search-submit{
@@ -141,27 +181,105 @@ header{
 	transform: skewY(-1deg);
 	text-transform: uppercase;
 	cursor: pointer;
+	transition: .3s;
 }
 
 
+.sann, .sloc, .smit
+{
+	margin:2px 5px;
+    max-width: 100%;
+	height:30px;
+	position: relative;
+	outline: none;
+}
+
+.sann, .sloc{
+	margin-bottom:10px;
+}
+
+.sann::after, .sloc::after{
+	content: "";
+	width:10px;
+	height:10px;
+	position: absolute;
+	background:none;
+	outline: none;
+	border:2px solid rgb(99, 110, 114,.8);
+	border-radius:50%;
+	transition: .3s;
+	opacity: 1;
+	top:35%;
+	left:80%;
+}
+
+.sann::before, .sloc::before{
+	content: "";
+	width:2px;
+	height:8px;
+	position: absolute;
+	background:rgb(99, 110, 114,.8);
+	outline: none;
+	border:none;
+	opacity: 1;
+	top:75%;
+	right:13%;
+	transition: .3s;
+	transform: skew(35deg);
+}
+
+input[data-name="sann"]:focus, input[data-name="sloc"]:focus {
+  border: 2px solid rgb(255, 195, 18);
+  border-radius: 10px;
+  height: 34px;
+  font-size:13px;
+
+}
+button.search-submit:hover{
+	background: rgba(255, 234, 167,.9);
+	border: 3px solid white;
+	font-size:21px;
+	color: rgb(0, 148, 50);
+	font-weight: bold;
+
+
+
+
+}
+
+.sann:focus-within::after, .sloc:focus-within::after {
+opacity: 0;
+}
+.sann:focus-within::before, .sloc:focus-within::before {
+  transform: skew(0deg);
+  width: 0; 
+  height: 0; 
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent; 
+  border-right:8px solid rgb(99, 110, 114,.8); 
+  background:none;
+  top:50%;
+  right:13%;
+  transition: .3s;
+}
+
 .search-bdy
 {
-	position: relative;
+	max-width:100%;
+	height:30px;
 	padding: 9px 25px;
 	background-color:rgba(255, 234, 167,1);
 	border: none;
     border-radius:20px;
 	cursor: pointer;
 	outline: none;
+    color: #3f3f3f;
+    transition: .2s;
+
 }
 
-.search-bdy::after{
-	content:"";
-	background:black;
-	color:black;
-	width:50px;
-	height:50px;
-}
+
+
 
 
 /*head stuff end*/

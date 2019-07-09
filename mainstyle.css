@@ -102,7 +102,6 @@ header{
 
 .search-content{
 	
-	justify-content: center;
 	background: rgb(35,40,108);
     background: linear-gradient(180deg, rgba(35,40,108,.1) 0%, rgba(82,47,113,0.6491771708683473) 50%, rgba(200,65,116,1) 100%);
     padding:auto 10px;
@@ -111,6 +110,8 @@ header{
     width:100%;
     flex-direction: row;
     flex-flow: wrap;
+    justify-content: center;
+    align-items: center;
     -webkit-box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
    box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
@@ -294,7 +295,6 @@ box-shadow: inset -4px 136px 25px -134px rgba(255,255,255,1);
 
 }
 
-
 .sann:focus-within::after, .sloc:focus-within::after {
 opacity: 0;
 }
@@ -350,6 +350,11 @@ opacity: 0;
 	text-align:center;
 	padding: 5px 2px;
 }
+
+
+
+
+
 /*content stuff end*/
 .body-content+.foot-content{
 	margin-top:0px;

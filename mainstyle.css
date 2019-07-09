@@ -136,6 +136,24 @@ header{
     flex-flow: wrap;
   }
 }
+@media (min-width: 320px) and (max-width: 568px) {
+  .head-content{
+  	display: flex;
+  	flex-direction: row;
+  	flex-flow: wrap;
+	padding: 15px 2%;
+	justify-content: center;
+	align-items: center;
+  }
+  .head-content nav{
+
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+  }
+}
 @media (max-width: 300px) {
   .head-content{
   	display: flex;

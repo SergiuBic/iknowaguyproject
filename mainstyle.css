@@ -91,6 +91,8 @@ header{
 .head-content, .search-content{
 	display: flex;
 	align-items:center;
+	flex-direction: row;
+	flex-flow: wrap;
 	
 }
 .head-content{
@@ -107,7 +109,8 @@ header{
     padding-bottom:5px;
     margin:0 auto;
     width:100%;
-    flex-flow: row wrap;
+    flex-direction: row;
+    flex-flow: wrap;
     -webkit-box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
   -moz-box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
    box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
@@ -124,7 +127,7 @@ header{
 .logo{
 	cursor: pointer;
 	position: relative;
-	display: inline-block;
+	display: flex;
 	margin-left:0px;
 	width:100px;
 	height:100px;
@@ -138,6 +141,8 @@ header{
 	height:122px;
 	margin-left: -10px;
 	margin-top: -8px;
+	margin-right:-10px;
+	margin-bottom:-15px;
 	border: 1px solid white;
 	border-radius:50%;
 	vertical-align: middle;
@@ -287,7 +292,6 @@ input[data-name="sann"]:focus, input[data-name="sloc"]:focus {
 -moz-box-shadow: inset -4px 136px 25px -134px rgba(255,255,255,1);
 box-shadow: inset -4px 136px 25px -134px rgba(255,255,255,1);
 
-
 }
 
 
@@ -311,7 +315,10 @@ opacity: 0;
 {
 	max-width:100%;
 	height:30px;
-	padding: 9px 25px;
+	padding-top: 9px;
+	padding-bottom: 9px;
+	padding-left: 10px;
+	padding-right: 15px;
 	background-color:var(--materialOrange);
 	border: none;
     border-radius:20px;

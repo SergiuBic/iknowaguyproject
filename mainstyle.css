@@ -145,6 +145,9 @@ header{
 	justify-content: center;
 	align-items: center;
   }
+  .logo {
+  	margin-bottom: 5px;
+  }
   .head-content nav{
 
     justify-content: center;
@@ -425,8 +428,96 @@ opacity: 0;
 }
 
 
+/**Card content start**/
+.main-card{
+	margin: 10px 10px;
+	display:flex;
+	flex-flow: column;
+	flex-wrap: column;
+	background: rgba(237, 231, 246,.5);
+	width: auto;
+	position: relative;
+	
+}
+
+.main-card-user{
+	max-width:150px;
+	display:flex;
+	flex-flow: row;
+	flex-wrap: wrap;
+	position: relative;
+	justify-content: left;
+	align-items: left;
+	vertical-align: middle;
+	
+}
+.main-card-user::after{
+	content:"";
+	position: absolute;
+	bottom: 15%;
+	background: white;
+	width: 100%;
+	height:2px;
+	left:5%;
+	opacity: .5;
+	
+}
+.main-card-user img{
+	position: relative;
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+	overflow: hidden;
+}
+
+.main-card-user .card-user-initials{
+	position: absolute;
+	top:25%;
+	left:10%;
+	letter-spacing: 2px;
+	color:white;
+	font-weight: bold;
+}
+
+.main-card-user .card-user-name{
+	position: absolute;
+	top:25%;
+	left:38%;
+	letter-spacing: 2px;
+	color:black;
+	font-weight: bold;
+}
+
+.middle-card{
+	display: flex;
+	flex-flow: column;
+	flex-wrap: column;
+	align-items: center;
+	justify-content: center;
+	vertical-align: center;
+	position: relative;
+	margin: 0 auto;
+	max-height: 360px;
+	overflow: hidden;
+}
+.middle-card img{
+	position: relative;
+	width:100%;
+	height:calc(100%-150px);
 
 
+}
+.main-card-description{
+	position: absolute;
+	bottom: 0%;
+	left:1%;
+	text-align: left;
+	display: inline;
+	width:100%;
+	height: 60px;
+
+}
+/**Card content end**/
 
 /*content stuff end*/
 .body-content+.foot-content{

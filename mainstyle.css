@@ -24,41 +24,31 @@ li, a{
     50%{background-position:78% 100%}
     100%{background-position:23% 0%}
 }
+/*Colors*/
+:root{
+--theOrange: rgba(239 ,202, 33,1);
+--theOrange8: rgba(239 ,202, 33,.8);
+--theOrange7: rgba(239 ,202, 33,.7);
+--theOrange5: rgba(239 ,202, 33,.5);
+--theOrange4: rgba(239 ,202, 33,.4);
+--materialOrange: rgba(255, 193, 7,1.0);
+}
 
-#bg {
-
+#bg img{
   position: fixed; 
   background-color:#34495e;
-  background-image: url(Media/undraw_building_blocks_n0nc.svg);
-  background-size:50% 50%;
-  -o-background-size: 50% 50%;
-  -webkit-background-size: 50% 50%;
   background-size:cover;
-  top: 8%; 
+  top: 0; 
   right: 0; 
   bottom:0;
   width: 100%; 
   height: 100%;
-  opacity: .8;
+  opacity: 1;
   z-index:-1;
-
- /* background: -webkit-linear-gradient(to left, #C06C84, #6C5B7B, #355C7D);  
-  background: linear-gradient(to left, #C06C84, #6C5B7B, #355C7D);
-  background-size: 600% 600%;
-  -webkit-animation: bgcycle 60s ease infinite;
-  -moz-animation: bgcycle 60s ease infinite;
-  animation: bgcycle 60s ease infinite;
-  filter: grayscale(30%) blur(2px);
-  -moz-box-shadow: 0 0 5px #fff;
--webkit-box-shadow: 0 0 5px #fff;
-box-shadow: 0px 0px 5px #fff;*/
-
-
-
 }
 
 
-#bg .main-bg-image{
+#bg {
   position: absolute; 
   top: 0; 
   left: 0; 
@@ -79,9 +69,13 @@ box-shadow: 0px 0px 5px #fff;*/
 	"bdy"
 	"foot";
 }
-header, {
-    background-color: rgba(255,255,255,.5);
-	color: rgba(255,255,255,.9);
+header {
+background: #141E30;  
+background: -webkit-linear-gradient(to left, #243B55, #141E30); 
+background: linear-gradient(to left, #243B55, #141E30); 
+
+    /*background-color: rgba(255,255,255,.5);*/
+	color: rgba(255,255,255,.8);
 	font-weight:500;
 }
 .body-content, .foot-content{
@@ -92,7 +86,7 @@ header, {
 header{
 	grid-area:header;
 	width: 100%;
-	padding: 5px 5px;
+	padding: auto 5px;
 }
 .head-content, .search-content{
 	display: flex;
@@ -105,14 +99,18 @@ header{
 }
 
 .search-content{
-	border-top: 1px solid grey;
+	
 	justify-content: center;
-	background: rgba(255,255,255,.5);
-	border-radius: 5px;
-    padding:10px 10px;
-    margin: 5px 5px;
+	background: rgb(35,40,108);
+    background: linear-gradient(180deg, rgba(35,40,108,.1) 0%, rgba(82,47,113,0.6491771708683473) 50%, rgba(200,65,116,1) 100%);
+    padding:auto 10px;
+    padding-bottom:5px;
+    margin:0 auto;
     width:100%;
     flex-flow: row wrap;
+    -webkit-box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
+   box-shadow: 6px 15px 32px -12px rgba(0,0,0,0.75);
 }
 
 .search-content input{
@@ -125,13 +123,28 @@ header{
 
 .logo{
 	cursor: pointer;
+	position: relative;
+	display: inline-block;
 	margin-left:0px;
 	width:100px;
 	height:100px;
 	border-radius:50%;
-	border:1px solid rgba(255, 234, 167,.3);
-	opacity: .8;
+	overflow: hidden ;
+	opacity: 1;
+	
 }
+.logo img{
+	width:122px;
+	height:122px;
+	margin-left: -10px;
+	margin-top: -8px;
+	border: 1px solid white;
+	border-radius:50%;
+	vertical-align: middle;
+	overflow: hidden ;
+	box-sizing: border-box;
+}
+
 
 .nav-content{
 	list-style: none;
@@ -151,7 +164,7 @@ header{
 }
 
 .nav-content li:nth-of-type(2){
-	background: rgba(255, 234, 167,.9);
+	background: rgba(255, 234, 167,.2);
 	border-radius:3px;
 	color: black;
 	text-transform: uppercase;
@@ -161,8 +174,9 @@ header{
 .nav-content li:nth-of-type(2):hover{
 	background: #2d3436;
 	font-weight:bold;
-	border:1px solid rgb(255, 195, 18);
+	border:1px solid var(--theOrange);
 	border-radius:3px;
+	color:var(--theOrange);
 	text-transform: uppercase;
 }
 .nav-content li:nth-of-type(1)::before, .nav-content li:nth-of-type(1)::after {
@@ -176,11 +190,11 @@ header{
  
 }
 .nav-content li:nth-of-type(1)::before {
-    border-top: 2px solid rgba(255, 234, 167,.9);
+    border-top: 2px solid var(--theOrange);
     transform: scale3d(0,1,1);
 }
 .nav-content li:nth-of-type(1)::after {
-    border-bottom: 2px solid rgba(255, 234, 167,.9);
+    border-bottom: 2px solid var(--theOrange);
     transform: scale3d(1,0,1);
  }
 .nav-content li:nth-of-type(1):hover::before,
@@ -195,22 +209,33 @@ header{
 }
 
 .search-submit{
-	border: 3px solid rgba(255, 234, 167,.9);
+	border: 3px solid var(--theOrange);
 	outline: none;
-	max-width:150px;
-	max-height:60px;
-	padding:3px 5px;
-	color: rgba(0, 0, 0,1);
-	font-size:20px;
+	border-radius:5px;
+	max-width:180px;
+	max-height:30px;
+	padding:5px 5px;
+	color: rgba(255, 255, 255,1);
+	font-size:18px;
+	letter-spacing: 2px;
+	line-height: 17px;
 	font-weight: bold !important;
-	background-color: rgba(255, 255, 255,.5);
-	transform: skewY(-1deg);
+	background-color: rgba(255, 255, 255,.1);
+	transform: skewY(0deg);
+	transform-origin: bottom;
 	text-transform: uppercase;
 	cursor: pointer;
-	transition: .3s;
+	transition: .3s ease-in-out;
+	
 }
 
-
+button.search-submit:hover{
+	background:var(--theOrange);
+	border: 3px solid var(--theOrange);
+    border-radius:5px;
+	color: black;
+	font-weight: bold;
+}
 .sann, .sloc, .smit
 {
 	margin:2px 5px;
@@ -231,7 +256,7 @@ header{
 	position: absolute;
 	background:none;
 	outline: none;
-	border:2px solid rgb(99, 110, 114,.8);
+	border:2px solid black;
 	border-radius:50%;
 	transition: .3s;
 	opacity: 1;
@@ -244,7 +269,7 @@ header{
 	width:2px;
 	height:8px;
 	position: absolute;
-	background:rgb(99, 110, 114,.8);
+	background:black;
 	outline: none;
 	border:none;
 	opacity: 1;
@@ -255,23 +280,16 @@ header{
 }
 
 input[data-name="sann"]:focus, input[data-name="sloc"]:focus {
-  border: 2px solid rgb(255, 195, 18);
+  border: 1px solid black;
   border-radius: 10px;
-  height: 34px;
-  font-size:13px;
-
-}
-button.search-submit:hover{
-	background: rgba(255, 234, 167,.9);
-	border: 3px solid white;
-	font-size:21px;
-	color: rgb(0, 148, 50);
-	font-weight: bold;
-
-
+  height: 30px;
+-webkit-box-shadow: inset -4px 136px 25px -134px rgba(255,255,255,1);
+-moz-box-shadow: inset -4px 136px 25px -134px rgba(255,255,255,1);
+box-shadow: inset -4px 136px 25px -134px rgba(255,255,255,1);
 
 
 }
+
 
 .sann:focus-within::after, .sloc:focus-within::after {
 opacity: 0;
@@ -282,9 +300,9 @@ opacity: 0;
   height: 0; 
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent; 
-  border-right:8px solid rgb(99, 110, 114,.8); 
+  border-right:8px solid black; 
   background:none;
-  top:50%;
+  top:40%;
   right:13%;
   transition: .3s;
 }
@@ -294,19 +312,21 @@ opacity: 0;
 	max-width:100%;
 	height:30px;
 	padding: 9px 25px;
-	background-color:rgba(255, 234, 167,1);
+	background-color:var(--materialOrange);
 	border: none;
     border-radius:20px;
 	cursor: pointer;
 	outline: none;
-    color: #3f3f3f;
+    color: black;
+    font-weight:bold;
     transition: .2s;
-
 }
 
-
-
-
+.search-bdy::placeholder
+{
+	font-style:italic;
+	color:black;
+}
 
 /*head stuff end*/
 

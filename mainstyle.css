@@ -526,6 +526,8 @@ opacity: 0;
 	padding: 20px 20%;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	width:100%;
+	white-space: nowrap;
 
 }
 /**Card content end**/
